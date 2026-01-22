@@ -5,8 +5,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // Uncomment and set if deploying to a subpath (e.g., /tchauffi-webpage)
-  // basePath: "/tchauffi-webpage",
+  basePath: "/tchauffi-webpage",
+  assetPrefix: "/tchauffi-webpage",
 };
 
 export default nextConfig;
