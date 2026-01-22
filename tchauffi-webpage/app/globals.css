@@ -1,0 +1,363 @@
+@import "tailwindcss";
+
+/* Lumon Brand Manual Design System - Dark Edition */
+
+:root {
+  --lumon-navy: #1e2a3a;
+  --lumon-navy-dark: #151e2a;
+  --lumon-white: #ffffff;
+  --lumon-white-muted: rgba(255, 255, 255, 0.7);
+  --lumon-border: rgba(255, 255, 255, 0.15);
+}
+
+@theme inline {
+  --color-navy: var(--lumon-navy);
+  --color-navy-dark: var(--lumon-navy-dark);
+  --color-border: var(--lumon-border);
+  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: var(--lumon-navy);
+  color: var(--lumon-white);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Lumon signature horizontal lines - like in the brand manual */
+.lumon-lines {
+  height: 32px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--lumon-white) 0px,
+    var(--lumon-white) 2px,
+    transparent 2px,
+    transparent 8px
+  );
+  opacity: 0.9;
+}
+
+.lumon-lines-thin {
+  height: 16px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--lumon-white) 0px,
+    var(--lumon-white) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  opacity: 0.5;
+}
+
+/* Smooth transitions */
+a {
+  transition: all 0.2s ease;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--lumon-navy-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Subtle animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes draw-line {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--line-width, 100%);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.8;
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-cursor {
+  0%, 50% {
+    border-color: white;
+  }
+  51%, 100% {
+    border-color: transparent;
+  }
+}
+
+@keyframes counter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fade-in 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fade-in-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-fade-in-left {
+  opacity: 0;
+  animation: fade-in-left 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-slide-in-right {
+  opacity: 0;
+  animation: slide-in-right 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-scale-in {
+  opacity: 0;
+  animation: scale-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-draw-line {
+  animation: draw-line 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  overflow: hidden;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Staggered animation delays - smoother spacing */
+.delay-100 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 300ms; }
+.delay-300 { animation-delay: 450ms; }
+.delay-400 { animation-delay: 600ms; }
+.delay-500 { animation-delay: 750ms; }
+.delay-600 { animation-delay: 900ms; }
+.delay-700 { animation-delay: 1050ms; }
+.delay-800 { animation-delay: 1200ms; }
+.delay-1000 { animation-delay: 1500ms; }
+.delay-1200 { animation-delay: 1800ms; }
+
+/* Elements start invisible for animation */
+.animate-on-scroll {
+  opacity: 0;
+}
+
+/* Hover animations */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.hover-glow {
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.hover-glow:hover {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Line drawing animation for lumon-lines */
+.lumon-lines-animated {
+  height: 32px;
+  width: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--lumon-white) 0px,
+    var(--lumon-white) 2px,
+    transparent 2px,
+    transparent 8px
+  );
+  opacity: 0.9;
+  animation: draw-line 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 600ms;
+  --line-width: 100%;
+}
+
+.lumon-lines-thin-animated {
+  height: 16px;
+  width: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--lumon-white) 0px,
+    var(--lumon-white) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  opacity: 0.5;
+  animation: draw-line 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --line-width: 100%;
+}
+
+/* Scroll-triggered line animations */
+.lumon-lines-scroll {
+  height: 32px;
+  width: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--lumon-white) 0px,
+    var(--lumon-white) 2px,
+    transparent 2px,
+    transparent 8px
+  );
+  opacity: 0.9;
+  --line-width: 100%;
+}
+
+.lumon-lines-scroll.animate {
+  animation: draw-line 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.lumon-lines-thin-scroll {
+  height: 16px;
+  width: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--lumon-white) 0px,
+    var(--lumon-white) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  opacity: 0.5;
+  --line-width: 100%;
+}
+
+.lumon-lines-thin-scroll.animate {
+  animation: draw-line 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Project item hover effect */
+.project-item {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  padding-left: 0;
+  border-left: 2px solid transparent;
+}
+
+.project-item:hover {
+  padding-left: 16px;
+  border-left-color: rgba(255, 255, 255, 0.3);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+}
+
+/* Stats counter animation */
+.stat-number {
+  display: inline-block;
+}
+
+/* Section reveal - smoother timing */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fade-in-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+section:nth-child(1) { animation-delay: 0ms; }
+section:nth-child(2) { animation-delay: 150ms; }
+section:nth-child(3) { animation-delay: 300ms; }
+section:nth-child(4) { animation-delay: 450ms; }
+section:nth-child(5) { animation-delay: 600ms; }
+section:nth-child(6) { animation-delay: 750ms; }
+section:nth-child(7) { animation-delay: 900ms; }
+footer { animation-delay: 700ms; }
+
