@@ -6,7 +6,7 @@ export default function Blog() {
     {
       id: "training-diffusion-models-from-scratch",
       title: "Training Diffusion Models from Scratch",
-      date: "2024",
+      date: "2026",
       description: "A comprehensive guide to understanding and implementing diffusion models from the ground up. Covers the mathematical foundations, practical implementation details, and training strategies for building your own diffusion model using PyTorch.",
       link: "https://medium.com/@thibaut.chauffier/training-diffusion-models-from-scratch-21d7a1f18e9e",
       tags: ["Diffusion Models", "PyTorch", "Deep Learning", "Generative AI"],
