@@ -11,6 +11,15 @@ export default function Blog() {
       link: "https://medium.com/@thibaut.chauffier/training-diffusion-models-from-scratch-21d7a1f18e9e",
       tags: ["Diffusion Models", "PyTorch", "Deep Learning", "Generative AI"],
       platform: "Medium"
+    },
+    {
+      id: "exploring-3d-gaussian-splatting",
+      title: "Exploring 3D Gaussian Splatting",
+      date: "2024",
+      description: "An exploration of 3D Gaussian Splatting, a revolutionary technique for real-time rendering and 3D reconstruction. Covers the core concepts, implementation details, and practical applications of this cutting-edge computer graphics method.",
+      link: "https://medium.com/@thibaut.chauffier/exploring-3d-gaussian-splatting-e50b8c9cee93",
+      tags: ["3D Vision", "Gaussian Splatting", "Computer Graphics", "Real-time Rendering"],
+      platform: "Medium"
     }
   ];
 
