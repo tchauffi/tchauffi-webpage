@@ -1,4 +1,5 @@
 import AnimatedLine from "./components/AnimatedLine";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -309,6 +310,10 @@ ML accessible through elegant production architectures.
           <AnimatedLine variant="thin" width="96px" className="mb-12" />
           
           <div className="space-y-4">
+            <Link href="/blog"
+               className="block text-white/70 hover:text-white hover:translate-x-2 transition-all text-lg">
+              Blog →
+            </Link>
             <a href="mailto:tchauffi@gmail.com" 
                className="block text-white/70 hover:text-white hover:translate-x-2 transition-all text-lg">
               tchauffi@gmail.com →
