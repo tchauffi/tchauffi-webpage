@@ -314,7 +314,7 @@ ML accessible through elegant production architectures.
                className="block text-white/70 hover:text-white hover:translate-x-2 transition-all text-lg">
               Blog →
             </Link>
-            <a href="mailto:tchauffi@gmail.com" 
+            <a href="mailto:tchauffi+persosite@gmail.com" 
                className="block text-white/70 hover:text-white hover:translate-x-2 transition-all text-lg">
               Email →
             </a>
