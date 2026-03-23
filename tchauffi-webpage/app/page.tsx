@@ -316,7 +316,7 @@ ML accessible through elegant production architectures.
             </Link>
             <a href="mailto:tchauffi@gmail.com" 
                className="block text-white/70 hover:text-white hover:translate-x-2 transition-all text-lg">
-              tchauffi@gmail.com →
+              Email →
             </a>
             <a href="https://linkedin.com/in/thibautchauffier" target="_blank" rel="noopener noreferrer"
                className="block text-white/70 hover:text-white hover:translate-x-2 transition-all text-lg">
