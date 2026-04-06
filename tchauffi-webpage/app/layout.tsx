@@ -14,9 +14,37 @@ const ibmPlexMono = IBM_Plex_Mono({
   weight: ["400", "500", "600"],
 });
 
+const BASE_URL = "https://tchauffi.github.io/tchauffi-webpage";
+
 export const metadata: Metadata = {
   title: "Thibaut Chauffier | Senior ML Research Engineer",
-  description: "Senior Machine Learning Research Engineer specializing in diffusion models, 3D vision, and production AI systems.",
+  description:
+    "Senior ML Research Engineer bridging deep research and production impact — published author (ICCV 2025, Oral), inventor of 5 patents. Expert in diffusion models, 3D Gaussian splatting, and production AI systems.",
+  metadataBase: new URL(BASE_URL),
+  openGraph: {
+    type: "website",
+    url: BASE_URL,
+    title: "Thibaut Chauffier | Senior ML Research Engineer",
+    description:
+      "Senior ML Research Engineer bridging deep research and production impact — published author (ICCV 2025, Oral), inventor of 5 patents. Expert in diffusion models, 3D Gaussian splatting, and production AI systems.",
+    siteName: "Thibaut Chauffier",
+    images: [
+      {
+        url: `${BASE_URL}/profile.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Thibaut Chauffier — Senior ML Research Engineer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Thibaut Chauffier | Senior ML Research Engineer",
+    description:
+      "Senior ML Research Engineer — ICCV 2025 (Oral), 5 patents, diffusion models & 3D vision deployed at scale.",
+    images: [`${BASE_URL}/profile.jpg`],
+    creator: "@tchauffi",
+  },
 };
 
 export default function RootLayout({
