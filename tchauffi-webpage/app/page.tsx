@@ -392,7 +392,7 @@ export default function Home() {
           <AnimatedLine variant="thin" width="96px" className="mb-12" />
 
           <div className="space-y-4">
-            <a href="/CV_V2_TC_2025.pdf" download
+            <a href="/CV_V2_TC_2025.pdf" download="RESUME_TC_2026.pdf"
                className="block text-white/70 hover:text-white hover:translate-x-2 transition-all text-lg font-light">
               Resume (PDF) →
             </a>
