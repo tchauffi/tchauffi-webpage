@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Thibaut Chauffier",
     images: [
       {
-        url: `${BASE_URL}/profile.jpg`,
+        url: `${BASE_URL}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "Thibaut Chauffier — Senior ML Research Engineer",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "Thibaut Chauffier | Senior ML Research Engineer",
     description:
       "Senior ML Research Engineer — ICCV 2025 (Oral), 5 patents, diffusion models & 3D vision deployed at scale.",
-    images: [`${BASE_URL}/profile.jpg`],
+    images: [`${BASE_URL}/og-image.png`],
     creator: "@tchauffi",
   },
 };
