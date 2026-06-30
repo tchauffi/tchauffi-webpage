@@ -54,6 +54,10 @@ export default function Home() {
               <div className="text-3xl md:text-4xl font-light text-white stat-number">1M+</div>
               <div className="text-sm text-white/50 uppercase tracking-wider mt-1">Users</div>
             </div>
+            <div className="animate-fade-in-up delay-400 hover-lift p-4 -m-4 rounded-lg transition-all">
+              <div className="text-3xl md:text-4xl font-light text-white stat-number">ICCV</div>
+              <div className="text-sm text-white/50 uppercase tracking-wider mt-1">Oral · 2025</div>
+            </div>
           </div>
         </div>
       </section>
@@ -354,6 +358,7 @@ export default function Home() {
                     ChessTransformer →
                   </h3>
                   <p className="text-white/40 text-sm">Transformer-based chess engine trained on the Lichess database, rated 2570 elo</p>
+                  <span className="block mt-1 text-white/30 text-xs font-mono">PyTorch · Transformers</span>
                 </a>
 
                 <a href="https://github.com/tchauffi/rust-rasterizer" target="_blank" rel="noopener noreferrer"
@@ -362,6 +367,7 @@ export default function Home() {
                     rust-rasterizer →
                   </h3>
                   <p className="text-white/40 text-sm">Real-time raytracer in Rust, running in-browser via WebGPU</p>
+                  <span className="block mt-1 text-white/30 text-xs font-mono">Rust · WebGPU</span>
                 </a>
 
                 <a href="https://github.com/tchauffi/diffusion-pytorch" target="_blank" rel="noopener noreferrer"
@@ -370,6 +376,7 @@ export default function Home() {
                     diffusion-pytorch →
                   </h3>
                   <p className="text-white/40 text-sm">Diffusion model experiments and implementations in PyTorch</p>
+                  <span className="block mt-1 text-white/30 text-xs font-mono">PyTorch · Diffusion</span>
                 </a>
 
                 <a href="https://github.com/tchauffi/diffusionlm-from-scratch" target="_blank" rel="noopener noreferrer"
@@ -378,6 +385,7 @@ export default function Home() {
                     diffusionlm-from-scratch →
                   </h3>
                   <p className="text-white/40 text-sm">Diffusion language model built from scratch</p>
+                  <span className="block mt-1 text-white/30 text-xs font-mono">PyTorch · Discrete Diffusion</span>
                 </a>
 
                 <a href="https://github.com/tchauffi/nonet" target="_blank" rel="noopener noreferrer"
@@ -386,6 +394,7 @@ export default function Home() {
                     nonet →
                   </h3>
                   <p className="text-white/40 text-sm">Discrete diffusion based sudoku solver</p>
+                  <span className="block mt-1 text-white/30 text-xs font-mono">PyTorch · Discrete Diffusion</span>
                 </a>
 
                 <a href="https://github.com/tchauffi" target="_blank" rel="noopener noreferrer"
@@ -418,7 +427,7 @@ export default function Home() {
           <AnimatedLine variant="thin" width="96px" className="mb-12" />
 
           <div className="space-y-4">
-            <a href="/tchauffi-webpage/CV_V2_TC_2025.pdf" download="RESUME_TC_2026.pdf"
+            <a href="/tchauffi-webpage/Thibaut_Chauffier_Resume.pdf" download="Thibaut_Chauffier_Resume.pdf"
                className="block text-white/70 hover:text-white hover:translate-x-2 transition-all text-lg font-light">
               Resume (PDF) →
             </a>

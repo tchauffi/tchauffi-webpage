@@ -16,6 +16,39 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 const BASE_URL = "https://tchauffi.github.io/tchauffi-webpage";
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Thibaut Chauffier",
+  jobTitle: "Senior ML Research Engineer",
+  url: BASE_URL,
+  image: `${BASE_URL}/og-image.png`,
+  worksFor: {
+    "@type": "Organization",
+    name: "L'Oréal",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Paris",
+    addressCountry: "France",
+  },
+  knowsAbout: [
+    "Diffusion Models",
+    "Generative AI",
+    "Computer Vision",
+    "3D Gaussian Splatting",
+    "Self-Supervised Learning",
+    "Transformers",
+    "MLOps",
+  ],
+  sameAs: [
+    "https://github.com/tchauffi",
+    "https://linkedin.com/in/thibautchauffier",
+    "https://medium.com/@thibaut.chauffier",
+    "https://arxiv.org/abs/2507.21600",
+  ],
+};
+
 export const metadata: Metadata = {
   title: "Thibaut Chauffier | Senior ML Research Engineer",
   description:
@@ -58,6 +91,10 @@ export default function RootLayout({
         className={`${ibmPlexSerif.variable} ${ibmPlexMono.variable} antialiased`}
         suppressHydrationWarning
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         {children}
       </body>
     </html>
