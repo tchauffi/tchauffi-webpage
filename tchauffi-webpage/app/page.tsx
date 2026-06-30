@@ -145,7 +145,7 @@ export default function Home() {
                 reconstruction, optimized for production deployment.
               </p>
               <div className="ml-12">
-                <span className="text-white/40 text-sm">3D Gaussian Splatting · NeRF · FLAME · Computer Vision</span>
+                <span className="text-white/40 text-sm">3D Gaussian Splatting · FLAME · Computer Vision</span>
               </div>
             </div>
 
@@ -278,8 +278,9 @@ export default function Home() {
               <h3 className="text-white/50 text-sm uppercase tracking-wider mb-4">ML / AI Research</h3>
               <ul className="space-y-2 text-white/70">
                 <li>Diffusion Models</li>
-                <li>Gaussian Splatting · NeRF</li>
-                <li>Transformers</li>
+                <li>Discrete Diffusion Models</li>
+                <li>Gaussian Splatting</li>
+                <li>Transformers · LLMs from scratch</li>
                 <li>Self-Supervised Learning</li>
                 <li>Multimodal Models</li>
                 <li>LoRA / PEFT Fine-tuning</li>
@@ -293,6 +294,7 @@ export default function Home() {
                 <li>PyTorch</li>
                 <li>TensorFlow</li>
                 <li>HuggingFace (Transformers, Diffusers)</li>
+                <li>Rust · WebGPU</li>
                 <li>FastAPI</li>
                 <li>Docker</li>
               </ul>
@@ -351,7 +353,7 @@ export default function Home() {
                   <h3 className="text-white/70 group-hover:text-white transition-colors">
                     ChessTransformer →
                   </h3>
-                  <p className="text-white/40 text-sm">Transformer-based chess engine trained on the Lichess database</p>
+                  <p className="text-white/40 text-sm">Transformer-based chess engine trained on the Lichess database, rated 2570 elo</p>
                 </a>
 
                 <a href="https://github.com/tchauffi/rust-rasterizer" target="_blank" rel="noopener noreferrer"
@@ -359,7 +361,31 @@ export default function Home() {
                   <h3 className="text-white/70 group-hover:text-white transition-colors">
                     rust-rasterizer →
                   </h3>
-                  <p className="text-white/40 text-sm">Real-time raytracer in Rust, running in-browser via WebAssembly</p>
+                  <p className="text-white/40 text-sm">Real-time raytracer in Rust, running in-browser via WebGPU</p>
+                </a>
+
+                <a href="https://github.com/tchauffi/diffusion-pytorch" target="_blank" rel="noopener noreferrer"
+                   className="block group">
+                  <h3 className="text-white/70 group-hover:text-white transition-colors">
+                    diffusion-pytorch →
+                  </h3>
+                  <p className="text-white/40 text-sm">Diffusion model experiments and implementations in PyTorch</p>
+                </a>
+
+                <a href="https://github.com/tchauffi/diffusionlm-from-scratch" target="_blank" rel="noopener noreferrer"
+                   className="block group">
+                  <h3 className="text-white/70 group-hover:text-white transition-colors">
+                    diffusionlm-from-scratch →
+                  </h3>
+                  <p className="text-white/40 text-sm">Diffusion language model built from scratch</p>
+                </a>
+
+                <a href="https://github.com/tchauffi/nonet" target="_blank" rel="noopener noreferrer"
+                   className="block group">
+                  <h3 className="text-white/70 group-hover:text-white transition-colors">
+                    nonet →
+                  </h3>
+                  <p className="text-white/40 text-sm">Discrete diffusion based sudoku solver</p>
                 </a>
 
                 <a href="https://github.com/tchauffi" target="_blank" rel="noopener noreferrer"
