@@ -458,9 +458,14 @@ export default function Home() {
       {/* Footer */}
       <footer className="px-8 md:px-16 lg:px-24 py-12 border-t border-border">
         <div className="max-w-5xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <p className="text-white/40 text-sm">
-            © 2026 Thibaut Chauffier
-          </p>
+          <div className="flex flex-col gap-1">
+            <p className="text-white/40 text-sm">
+              © 2026 Thibaut Chauffier
+            </p>
+            <p className="text-white/30 text-xs uppercase tracking-wider">
+              Updated June 2026
+            </p>
+          </div>
           <p className="text-white/30 text-xs animate-glow-pulse">
             The work is mysterious and important.
           </p>

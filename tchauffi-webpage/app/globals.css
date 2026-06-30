@@ -361,3 +361,52 @@ section:nth-child(6) { animation-delay: 750ms; }
 section:nth-child(7) { animation-delay: 900ms; }
 footer { animation-delay: 700ms; }
 
+/* Keyboard focus ring for accessible navigation (dark theme) */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Respect users who prefer reduced motion.
+   The animation system uses opacity:0 / width:0 base states, so we can't just
+   disable animations — we must force the visible end-state so nothing is left
+   invisible. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-fade-in,
+  .animate-fade-in-up,
+  .animate-fade-in-left,
+  .animate-slide-in-right,
+  .animate-scale-in,
+  .animate-on-scroll,
+  section {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .lumon-lines-animated,
+  .lumon-lines-thin-animated,
+  .lumon-lines-scroll,
+  .lumon-lines-thin-scroll {
+    width: var(--line-width, 100%) !important;
+  }
+
+  .animate-glow-pulse {
+    animation: none !important;
+  }
+}
+
