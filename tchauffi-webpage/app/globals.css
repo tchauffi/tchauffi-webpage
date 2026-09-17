@@ -8,21 +8,44 @@
   --lumon-white: #ffffff;
   --lumon-white-muted: rgba(255, 255, 255, 0.7);
   --lumon-border: rgba(255, 255, 255, 0.15);
+  --lumon-accent: #d9a44c;
+  --lumon-accent-dim: rgba(217, 164, 76, 0.15);
 }
 
 @theme inline {
   --color-navy: var(--lumon-navy);
   --color-navy-dark: var(--lumon-navy-dark);
   --color-border: var(--lumon-border);
+  --color-accent: var(--lumon-accent);
   --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-serif: var(--font-ibm-serif);
+  --font-mono: var(--font-ibm-mono);
 }
 
 body {
-  background: var(--lumon-navy);
+  background:
+    radial-gradient(ellipse 70% 50% at 15% -10%, rgba(217, 164, 76, 0.08), transparent 60%),
+    radial-gradient(ellipse 60% 45% at 90% 5%, rgba(120, 170, 255, 0.06), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 50% 100%, rgba(217, 164, 76, 0.05), transparent 60%),
+    var(--lumon-navy);
+  background-attachment: fixed;
   color: var(--lumon-white);
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   line-height: 1.6;
+  position: relative;
+}
+
+/* Subtle film-grain texture over the whole page for depth */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
 }
 
 /* Lumon signature horizontal lines - like in the brand manual */
@@ -327,6 +350,47 @@ html {
   animation: draw-line 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+/* Ambient glow behind the hero name */
+.hero-glow {
+  position: absolute;
+  inset: -10% -10% auto -10%;
+  height: 70vh;
+  background: radial-gradient(
+    ellipse 60% 50% at 30% 30%,
+    rgba(255, 255, 255, 0.09) 0%,
+    rgba(130, 170, 255, 0.06) 35%,
+    transparent 70%
+  );
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-glow {
+    animation: glow-pulse 8s ease-in-out infinite;
+  }
+}
+
+/* Cursor-follow spotlight, hero only */
+.cursor-spotlight {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle 380px at var(--spot-x, 50%) var(--spot-y, 30%),
+    rgba(217, 164, 76, 0.14),
+    transparent 70%
+  );
+}
+
+@media (max-width: 768px), (hover: none) {
+  .cursor-spotlight {
+    display: none;
+  }
+}
+
 /* Project item hover effect */
 .project-item {
   transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
@@ -336,8 +400,8 @@ html {
 
 .project-item:hover {
   padding-left: 16px;
-  border-left-color: rgba(255, 255, 255, 0.3);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+  border-left-color: var(--lumon-accent);
+  background: linear-gradient(90deg, var(--lumon-accent-dim) 0%, transparent 100%);
 }
 
 /* Stats counter animation */
@@ -365,7 +429,7 @@ footer { animation-delay: 700ms; }
 a:focus-visible,
 button:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid rgba(255, 255, 255, 0.7);
+  outline: 2px solid var(--lumon-accent);
   outline-offset: 3px;
   border-radius: 2px;
 }
