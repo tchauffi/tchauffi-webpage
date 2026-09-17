@@ -1,15 +1,19 @@
 import AnimatedLine from "./components/AnimatedLine";
 import InteractiveDemos from "./components/InteractiveDemos";
+import Nav from "./components/Nav";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-navy">
+    <>
+      <Nav />
+      <div className="min-h-screen bg-navy">
       {/* Hero Section - Brand Manual Style */}
-      <section className="min-h-screen flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20">
-        <div className="max-w-4xl">
+      <section id="top" className="relative overflow-hidden min-h-screen flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20">
+        <div className="hero-glow" aria-hidden="true" />
+        <div className="max-w-4xl relative z-10">
           {/* Name as main heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6 tracking-wide animate-fade-in-up hover-glow">
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6 tracking-wide animate-fade-in-up hover-glow">
             Thibaut Chauffier
           </h1>
 
@@ -22,7 +26,7 @@ export default function Home() {
           <div className="lumon-lines-animated w-full max-w-2xl mb-12 delay-400"></div>
 
           {/* Edition/subtitle */}
-          <p className="text-white/70 text-sm tracking-widest uppercase animate-fade-in delay-600">
+          <p className="font-mono text-white/70 text-sm tracking-widest uppercase animate-fade-in delay-600">
             Paris, France · Edition 2026
           </p>
         </div>
@@ -44,19 +48,19 @@ export default function Home() {
           {/* Stats Row */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="animate-fade-in-up delay-100 hover-lift p-4 -m-4 rounded-lg transition-all">
-              <div className="text-3xl md:text-4xl font-light text-white stat-number">8+</div>
+              <div className="font-mono text-3xl md:text-4xl font-light text-white stat-number">8+</div>
               <div className="text-sm text-white/50 uppercase tracking-wider mt-1">Years</div>
             </div>
             <div className="animate-fade-in-up delay-200 hover-lift p-4 -m-4 rounded-lg transition-all">
-              <div className="text-3xl md:text-4xl font-light text-white stat-number">5</div>
+              <div className="font-mono text-3xl md:text-4xl font-light text-white stat-number">5</div>
               <div className="text-sm text-white/50 uppercase tracking-wider mt-1">Patents</div>
             </div>
             <div className="animate-fade-in-up delay-300 hover-lift p-4 -m-4 rounded-lg transition-all">
-              <div className="text-3xl md:text-4xl font-light text-white stat-number">1M+</div>
+              <div className="font-mono text-3xl md:text-4xl font-light text-white stat-number">1M+</div>
               <div className="text-sm text-white/50 uppercase tracking-wider mt-1">Users</div>
             </div>
             <div className="animate-fade-in-up delay-400 hover-lift p-4 -m-4 rounded-lg transition-all">
-              <div className="text-3xl md:text-4xl font-light text-white stat-number">ICCV</div>
+              <div className="font-mono text-3xl md:text-4xl font-light text-white stat-number">ICCV</div>
               <div className="text-sm text-white/50 uppercase tracking-wider mt-1">Oral · 2025</div>
             </div>
           </div>
@@ -66,7 +70,7 @@ export default function Home() {
       {/* Publication — moved up, before Projects */}
       <section className="px-8 md:px-16 lg:px-24 py-20 border-t border-border">
         <div className="max-w-5xl">
-          <h2 className="text-2xl md:text-3xl font-light text-white mb-4 hover-glow">
+          <h2 className="font-serif text-2xl md:text-3xl font-light text-white mb-4 hover-glow">
             Publications &amp; Patents
           </h2>
           <AnimatedLine variant="thin" width="128px" className="mb-12" />
@@ -75,7 +79,7 @@ export default function Home() {
             {/* ICCV Paper */}
             <div className="group project-item">
               <div className="flex items-baseline gap-4 mb-2">
-                <span className="text-white/40 text-sm">2025</span>
+                <span className="font-mono text-white/40 text-sm">2025</span>
                 <div>
                   <h3 className="text-xl text-white font-light">
                     Locally Controlled Face Aging with Latent Diffusion Models
@@ -86,7 +90,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="ml-12 flex gap-4 text-sm mt-3">
-                <span className="text-white/40">Diffusion · Spatial Conditioning · Face Synthesis</span>
+                <span className="font-mono text-white/40 text-xs">Diffusion · Spatial Conditioning · Face Synthesis</span>
                 <a href="https://arxiv.org/abs/2507.21600" target="_blank" rel="noopener noreferrer"
                    className="text-white/70 hover:text-white transition-colors">
                   → arXiv:2507.21600
@@ -97,7 +101,7 @@ export default function Home() {
             {/* Patents */}
             <div className="group project-item">
               <div className="flex items-baseline gap-4 mb-2">
-                <span className="text-white/40 text-sm">–</span>
+                <span className="font-mono text-white/40 text-sm">–</span>
                 <div>
                   <h3 className="text-xl text-white font-light">5 Granted Patents</h3>
                   <p className="text-white/60 mt-1 text-sm leading-relaxed">
@@ -112,26 +116,26 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section className="px-8 md:px-16 lg:px-24 py-20 border-t border-border">
+      <section id="work" className="scroll-mt-24 px-8 md:px-16 lg:px-24 py-20 border-t border-border">
         <div className="max-w-5xl">
-          <h2 className="text-2xl md:text-3xl font-light text-white mb-4 hover-glow">
+          <h2 className="font-serif text-2xl md:text-3xl font-light text-white mb-4 hover-glow">
             Project Archive
           </h2>
           <AnimatedLine variant="thin" width="128px" className="mb-12" />
 
-          <div className="space-y-12">
+          <div className="grid md:grid-cols-2 gap-8">
             {/* Project 1 */}
-            <div className="group project-item">
+            <div className="hover-lift border border-border rounded-lg bg-white/[0.02] p-6 flex flex-col">
               <div className="flex items-baseline gap-4 mb-2">
-                <span className="text-white/40 text-sm">001</span>
+                <span className="font-mono text-white/40 text-sm">001</span>
                 <h3 className="text-xl text-white font-light">Controllable Face Aging</h3>
               </div>
-              <p className="text-white/60 ml-12 mb-2">
+              <p className="text-white/60 ml-10 mb-3 flex-1">
                 Custom Latent Diffusion model with efficient spatial conditioning for real-time
                 face aging on iPad Pro. Accepted as Oral at ICCV 2025.
               </p>
-              <div className="ml-12 flex gap-4 text-sm">
-                <span className="text-white/40">Diffusion · PyTorch · CoreML · Edge Inference</span>
+              <div className="ml-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+                <span className="font-mono text-white/40 text-xs">Diffusion · PyTorch · CoreML · Edge Inference</span>
                 <a href="https://arxiv.org/abs/2507.21600" target="_blank" rel="noopener noreferrer"
                    className="text-white/70 hover:text-white transition-colors">
                   → Publication
@@ -140,49 +144,49 @@ export default function Home() {
             </div>
 
             {/* Project 2 */}
-            <div className="group project-item">
+            <div className="hover-lift border border-border rounded-lg bg-white/[0.02] p-6 flex flex-col">
               <div className="flex items-baseline gap-4 mb-2">
-                <span className="text-white/40 text-sm">002</span>
+                <span className="font-mono text-white/40 text-sm">002</span>
                 <h3 className="text-xl text-white font-light">3D Facial Capture Pipeline</h3>
               </div>
-              <p className="text-white/60 ml-12 mb-2">
+              <p className="text-white/60 ml-10 mb-3 flex-1">
                 Novel 2D/3D Gaussian Splatting + FLAME pipeline for high-fidelity facial
                 reconstruction, optimized for production deployment.
               </p>
-              <div className="ml-12">
-                <span className="text-white/40 text-sm">3D Gaussian Splatting · FLAME · Computer Vision</span>
+              <div className="ml-10">
+                <span className="font-mono text-white/40 text-xs">3D Gaussian Splatting · FLAME · Computer Vision</span>
               </div>
             </div>
 
             {/* Project 3 */}
-            <div className="group project-item">
+            <div className="hover-lift border border-border rounded-lg bg-white/[0.02] p-6 flex flex-col">
               <div className="flex items-baseline gap-4 mb-2">
-                <span className="text-white/40 text-sm">003</span>
+                <span className="font-mono text-white/40 text-sm">003</span>
                 <h3 className="text-xl text-white font-light">Self-Supervised Facial Foundation Model</h3>
               </div>
-              <p className="text-white/60 ml-12 mb-2">
+              <p className="text-white/60 ml-10 mb-3 flex-1">
                 Foundation model trained with self-supervised objectives to learn
                 semantically rich facial representations, enabling zero-shot transfer across
                 multiple downstream tasks.
               </p>
-              <div className="ml-12">
-                <span className="text-white/40 text-sm">Self-Supervised Learning · Transfer Learning · PyTorch</span>
+              <div className="ml-10">
+                <span className="font-mono text-white/40 text-xs">Self-Supervised Learning · Transfer Learning · PyTorch</span>
               </div>
             </div>
 
             {/* Project 4 */}
-            <div className="group project-item">
+            <div className="hover-lift border border-border rounded-lg bg-white/[0.02] p-6 flex flex-col">
               <div className="flex items-baseline gap-4 mb-2">
-                <span className="text-white/40 text-sm">004</span>
+                <span className="font-mono text-white/40 text-sm">004</span>
                 <h3 className="text-xl text-white font-light">Global Skin Tone Detection</h3>
               </div>
-              <p className="text-white/60 ml-12 mb-2">
+              <p className="text-white/60 ml-10 mb-3 flex-1">
                 Low-latency CNN-based system for skin tone detection and foundation shade matching,
                 deployed across 9 L'Oréal brands on mobile and web. Sub-100ms inference via
                 model serving pipeline.
               </p>
-              <div className="ml-12 flex gap-4 text-sm">
-                <span className="text-white/40">Computer Vision · ONNX · FastAPI · MLOps</span>
+              <div className="ml-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+                <span className="font-mono text-white/40 text-xs">Computer Vision · ONNX · FastAPI · MLOps</span>
                 <a href="https://www.lancome-usa.com/e-shade-finder.html" target="_blank" rel="noopener noreferrer"
                    className="text-white/70 hover:text-white transition-colors">
                   → eShadefinder
@@ -191,17 +195,17 @@ export default function Home() {
             </div>
 
             {/* Project 5 */}
-            <div className="group project-item">
+            <div className="hover-lift border border-border rounded-lg bg-white/[0.02] p-6 flex flex-col md:col-span-2">
               <div className="flex items-baseline gap-4 mb-2">
-                <span className="text-white/40 text-sm">005</span>
+                <span className="font-mono text-white/40 text-sm">005</span>
                 <h3 className="text-xl text-white font-light">AI Formulation Engine</h3>
               </div>
-              <p className="text-white/60 ml-12 mb-2">
+              <p className="text-white/60 ml-10 mb-3 flex-1">
                 Real-time edge inference formulation prediction for YSL Rouge-Sur-Mesure,
                 enabling customer-designed lipsticks under strict embedded constraints.
               </p>
-              <div className="ml-12 flex gap-4 text-sm">
-                <span className="text-white/40">Embedded ML · Edge Inference · Real-time</span>
+              <div className="ml-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+                <span className="font-mono text-white/40 text-xs">Embedded ML · Edge Inference · Real-time</span>
                 <a href="https://www.yslbeautyus.com/rouge-sur-mesure/rouge-sur-mesure-custom-lip-color-creator/WW-50912YSL.html" target="_blank" rel="noopener noreferrer"
                    className="text-white/70 hover:text-white transition-colors">
                   → Rouge-Sur-Mesure
@@ -213,9 +217,9 @@ export default function Home() {
       </section>
 
       {/* Interactive Demos Section */}
-      <section className="px-8 md:px-16 lg:px-24 py-20 border-t border-border">
+      <section id="play" className="scroll-mt-24 px-8 md:px-16 lg:px-24 py-20 border-t border-border">
         <div className="max-w-5xl">
-          <h2 className="text-2xl md:text-3xl font-light text-white mb-4 hover-glow">
+          <h2 className="font-serif text-2xl md:text-3xl font-light text-white mb-4 hover-glow">
             Play With It
           </h2>
           <AnimatedLine variant="thin" width="128px" className="mb-6" />
@@ -229,9 +233,9 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section className="px-8 md:px-16 lg:px-24 py-20 border-t border-border">
+      <section id="experience" className="scroll-mt-24 px-8 md:px-16 lg:px-24 py-20 border-t border-border">
         <div className="max-w-5xl">
-          <h2 className="text-2xl md:text-3xl font-light text-white mb-4 hover-glow">
+          <h2 className="font-serif text-2xl md:text-3xl font-light text-white mb-4 hover-glow">
             Employment Record
           </h2>
           <AnimatedLine variant="thin" width="128px" className="mb-12" />
@@ -240,7 +244,7 @@ export default function Home() {
             {/* Role 1 */}
             <div>
               <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 mb-4">
-                <span className="text-white/40 text-sm md:w-32">2022 — Present</span>
+                <span className="font-mono text-white/40 text-sm md:w-32">2022 — Present</span>
                 <div>
                   <h3 className="text-xl text-white font-light">Senior ML Research Engineer · Technical Lead</h3>
                   <p className="text-white/50">L'Oréal · Paris</p>
@@ -256,7 +260,7 @@ export default function Home() {
             {/* Role 2 */}
             <div>
               <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 mb-4">
-                <span className="text-white/40 text-sm md:w-32">2017 — 2022</span>
+                <span className="font-mono text-white/40 text-sm md:w-32">2017 — 2022</span>
                 <div>
                   <h3 className="text-xl text-white font-light">Mechatronics Engineer</h3>
                   <p className="text-white/50">L'Oréal · Paris</p>
@@ -271,7 +275,7 @@ export default function Home() {
             {/* Role 3 */}
             <div>
               <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 mb-4">
-                <span className="text-white/40 text-sm md:w-32">2016 — 2017</span>
+                <span className="font-mono text-white/40 text-sm md:w-32">2016 — 2017</span>
                 <div>
                   <h3 className="text-xl text-white font-light">Mechatronics Engineer</h3>
                   <p className="text-white/50">Civic Drone · Paris</p>
@@ -289,14 +293,14 @@ export default function Home() {
       {/* Technical Section */}
       <section className="px-8 md:px-16 lg:px-24 py-20 border-t border-border">
         <div className="max-w-5xl">
-          <h2 className="text-2xl md:text-3xl font-light text-white mb-4 hover-glow">
+          <h2 className="font-serif text-2xl md:text-3xl font-light text-white mb-4 hover-glow">
             Technical Capabilities
           </h2>
           <AnimatedLine variant="thin" width="128px" className="mb-12" />
 
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="hover-lift p-4 -m-4 rounded-lg">
-              <h3 className="text-white/50 text-sm uppercase tracking-wider mb-4">ML / AI Research</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="hover-lift border border-border rounded-lg bg-white/[0.02] p-6">
+              <h3 className="font-mono text-white/50 text-sm uppercase tracking-wider mb-4">ML / AI Research</h3>
               <ul className="space-y-2 text-white/70">
                 <li>Diffusion Models</li>
                 <li>Discrete Diffusion Models</li>
@@ -309,8 +313,8 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="hover-lift p-4 -m-4 rounded-lg">
-              <h3 className="text-white/50 text-sm uppercase tracking-wider mb-4">Frameworks</h3>
+            <div className="hover-lift border border-border rounded-lg bg-white/[0.02] p-6">
+              <h3 className="font-mono text-white/50 text-sm uppercase tracking-wider mb-4">Frameworks</h3>
               <ul className="space-y-2 text-white/70">
                 <li>PyTorch</li>
                 <li>TensorFlow</li>
@@ -321,8 +325,8 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="hover-lift p-4 -m-4 rounded-lg">
-              <h3 className="text-white/50 text-sm uppercase tracking-wider mb-4">Production &amp; MLOps</h3>
+            <div className="hover-lift border border-border rounded-lg bg-white/[0.02] p-6">
+              <h3 className="font-mono text-white/50 text-sm uppercase tracking-wider mb-4">Production &amp; MLOps</h3>
               <ul className="space-y-2 text-white/70">
                 <li>Model Serving</li>
                 <li>Edge Inference</li>
@@ -343,13 +347,13 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-16">
             {/* Education */}
             <div>
-              <h2 className="text-2xl md:text-3xl font-light text-white mb-4 hover-glow">
+              <h2 className="font-serif text-2xl md:text-3xl font-light text-white mb-4 hover-glow">
                 Education
               </h2>
               <AnimatedLine variant="thin" width="96px" className="mb-8" />
 
               <div>
-                <p className="text-white/40 text-sm mb-2">2010 — 2015</p>
+                <p className="font-mono text-white/40 text-sm mb-2">2010 — 2015</p>
                 <h3 className="text-lg text-white font-light mb-1">
                   Université de Technologie de Compiègne
                 </h3>
@@ -363,7 +367,7 @@ export default function Home() {
 
             {/* Open Source */}
             <div>
-              <h2 className="text-2xl md:text-3xl font-light text-white mb-4 hover-glow">
+              <h2 className="font-serif text-2xl md:text-3xl font-light text-white mb-4 hover-glow">
                 Open Source
               </h2>
               <AnimatedLine variant="thin" width="96px" className="mb-8" />
@@ -445,9 +449,9 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="px-8 md:px-16 lg:px-24 py-20 border-t border-border">
+      <section id="contact" className="scroll-mt-24 px-8 md:px-16 lg:px-24 py-20 border-t border-border">
         <div className="max-w-4xl">
-          <h2 className="text-2xl md:text-3xl font-light text-white mb-4 hover-glow">
+          <h2 className="font-serif text-2xl md:text-3xl font-light text-white mb-4 hover-glow">
             Contact
           </h2>
           <AnimatedLine variant="thin" width="96px" className="mb-12" />
@@ -484,7 +488,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="px-8 md:px-16 lg:px-24 py-12 border-t border-border">
         <div className="max-w-5xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1 font-mono">
             <p className="text-white/40 text-sm">
               © 2026 Thibaut Chauffier
             </p>
@@ -497,6 +501,7 @@ export default function Home() {
           </p>
         </div>
       </footer>
-    </div>
+      </div>
+    </>
   );
 }
