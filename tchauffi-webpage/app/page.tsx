@@ -1,4 +1,5 @@
 import AnimatedLine from "./components/AnimatedLine";
+import InteractiveDemos from "./components/InteractiveDemos";
 import Link from "next/link";
 
 export default function Home() {
@@ -211,6 +212,22 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Interactive Demos Section */}
+      <section className="px-8 md:px-16 lg:px-24 py-20 border-t border-border">
+        <div className="max-w-5xl">
+          <h2 className="text-2xl md:text-3xl font-light text-white mb-4 hover-glow">
+            Play With It
+          </h2>
+          <AnimatedLine variant="thin" width="128px" className="mb-6" />
+          <p className="text-white/60 mb-12 max-w-2xl">
+            Four side projects you can actually try, right here — no install, nothing
+            leaves your browser.
+          </p>
+
+          <InteractiveDemos />
+        </div>
+      </section>
+
       {/* Experience Section */}
       <section className="px-8 md:px-16 lg:px-24 py-20 border-t border-border">
         <div className="max-w-5xl">
@@ -370,12 +387,12 @@ export default function Home() {
                   <span className="block mt-1 text-white/30 text-xs font-mono">PyTorch · Transformers</span>
                 </a>
 
-                <a href="https://github.com/tchauffi/rust-rasterizer" target="_blank" rel="noopener noreferrer"
+                <a href="https://github.com/tchauffi/rust-raytracer" target="_blank" rel="noopener noreferrer"
                    className="block group">
                   <h3 className="text-white/70 group-hover:text-white transition-colors">
-                    rust-rasterizer →
+                    rust-raytracer →
                   </h3>
-                  <p className="text-white/40 text-sm">Real-time raytracer in Rust, running in-browser via WebGPU</p>
+                  <p className="text-white/40 text-sm">Real-time raytracer in Rust, running in-browser via WebGPU — playable above</p>
                   <span className="block mt-1 text-white/30 text-xs font-mono">Rust · WebGPU</span>
                 </a>
 
