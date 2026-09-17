@@ -352,6 +352,15 @@ export default function Home() {
               <AnimatedLine variant="thin" width="96px" className="mb-8" />
 
               <div className="space-y-6">
+                <a href="https://github.com/tchauffi/metalsplat" target="_blank" rel="noopener noreferrer"
+                   className="block group">
+                  <h3 className="text-white/70 group-hover:text-white transition-colors">
+                    metalsplat →
+                  </h3>
+                  <p className="text-white/40 text-sm">Differentiable 3D Gaussian Splatting rasterizer for PyTorch on Apple Silicon, no CUDA required</p>
+                  <span className="block mt-1 text-white/30 text-xs font-mono">PyTorch · Metal/MPS</span>
+                </a>
+
                 <a href="https://github.com/tchauffi/ChessTransformer" target="_blank" rel="noopener noreferrer"
                    className="block group">
                   <h3 className="text-white/70 group-hover:text-white transition-colors">
