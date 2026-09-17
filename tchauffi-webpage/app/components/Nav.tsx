@@ -42,16 +42,16 @@ export default function Nav() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
-          ? "bg-navy/80 backdrop-blur-md border-b border-border"
+          ? "bg-navy/60 backdrop-blur-xl border-b border-white/10"
           : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="flex items-center justify-between px-5 md:px-16 lg:px-24 py-4">
         <a
           href="#top"
-          className="font-mono text-sm text-white/80 hover:text-white transition-colors tracking-wider"
+          className="font-mono text-sm text-white/80 hover:text-accent transition-colors tracking-wider"
         >
           TC
         </a>
@@ -61,7 +61,7 @@ export default function Nav() {
               key={link.id}
               href={`#${link.id}`}
               className={`font-mono text-[0.65rem] sm:text-xs md:text-sm uppercase tracking-wider transition-colors ${
-                activeId === link.id ? "text-white" : "text-white/50 hover:text-white"
+                activeId === link.id ? "text-accent" : "text-white/50 hover:text-white"
               }`}
             >
               {link.label}

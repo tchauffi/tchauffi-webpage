@@ -84,17 +84,17 @@ export default function InteractiveDemos() {
         {demos.map((demo) => (
           <div
             key={demo.id}
-            className="group project-item hover-lift p-6 -m-2 rounded-lg border border-border flex flex-col"
+            className="group hover-lift p-6 rounded-lg border border-border hover:border-accent/40 bg-white/[0.02] transition-colors flex flex-col"
           >
             <div className="flex items-baseline gap-4 mb-2">
-              <span className="text-white/40 text-sm">{demo.index}</span>
+              <span className="font-mono text-accent/80 text-sm">{demo.index}</span>
               <h3 className="text-lg text-white font-light">{demo.title}</h3>
             </div>
             <p className="text-white/60 ml-10 mb-3 text-sm leading-relaxed flex-1">
               {demo.description}
             </p>
             <div className="ml-10 flex flex-col gap-3">
-              <span className="text-white/40 text-xs">{demo.tags}</span>
+              <span className="font-mono text-white/40 text-xs">{demo.tags}</span>
               {demo.note && (
                 <span className="text-white/30 text-xs italic">{demo.note}</span>
               )}
@@ -102,7 +102,7 @@ export default function InteractiveDemos() {
                 <button
                   type="button"
                   onClick={() => setOpenId(demo.id)}
-                  className="inline-flex items-center gap-2 text-sm text-white/80 border border-white/30 rounded-full px-4 py-1.5 hover:bg-white hover:text-navy transition-colors"
+                  className="inline-flex items-center gap-2 text-sm text-accent border border-accent/50 rounded-full px-4 py-1.5 hover:bg-accent hover:text-navy transition-colors"
                 >
                   Launch Demo →
                 </button>
@@ -110,7 +110,7 @@ export default function InteractiveDemos() {
                   href={demo.repo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/40 hover:text-white text-xs transition-colors"
+                  className="text-white/40 hover:text-accent text-xs transition-colors"
                 >
                   Source →
                 </a>
@@ -141,7 +141,7 @@ export default function InteractiveDemos() {
                   href={active.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/50 hover:text-white text-xs md:text-sm transition-colors"
+                  className="text-white/50 hover:text-accent text-xs md:text-sm transition-colors"
                 >
                   Open in new tab ↗
                 </a>

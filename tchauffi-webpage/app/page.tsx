@@ -1,4 +1,5 @@
 import AnimatedLine from "./components/AnimatedLine";
+import CursorSpotlight from "./components/CursorSpotlight";
 import InteractiveDemos from "./components/InteractiveDemos";
 import Nav from "./components/Nav";
 import Link from "next/link";
@@ -11,24 +12,41 @@ export default function Home() {
       {/* Hero Section - Brand Manual Style */}
       <section id="top" className="relative overflow-hidden min-h-screen flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20">
         <div className="hero-glow" aria-hidden="true" />
+        <CursorSpotlight />
         <div className="max-w-4xl relative z-10">
           {/* Name as main heading */}
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6 tracking-wide animate-fade-in-up hover-glow">
+          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light text-white mb-6 tracking-wide animate-fade-in-up hover-glow">
             Thibaut Chauffier
           </h1>
 
           <p className="text-xl md:text-2xl lg:text-3xl font-light text-white mb-4 animate-fade-in-up delay-200">
             Senior ML Research Engineer<br />
-            <span className="text-white/60 text-lg md:text-xl lg:text-2xl">Computer Vision · Generative AI</span>
+            <span className="text-accent text-lg md:text-xl lg:text-2xl">Computer Vision · Generative AI</span>
           </p>
 
           {/* Lumon-style horizontal lines */}
           <div className="lumon-lines-animated w-full max-w-2xl mb-12 delay-400"></div>
 
           {/* Edition/subtitle */}
-          <p className="font-mono text-white/70 text-sm tracking-widest uppercase animate-fade-in delay-600">
+          <p className="font-mono text-white/70 text-sm tracking-widest uppercase animate-fade-in delay-600 mb-10">
             Paris, France · Edition 2026
           </p>
+
+          {/* CTA buttons */}
+          <div className="flex flex-wrap items-center gap-4 animate-fade-in-up delay-800">
+            <a
+              href="#work"
+              className="inline-flex items-center gap-2 text-sm bg-accent text-navy font-medium rounded-full px-6 py-2.5 hover:brightness-110 transition-all"
+            >
+              View My Work →
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 text-sm text-white/80 border border-white/30 rounded-full px-6 py-2.5 hover:border-accent hover:text-accent transition-colors"
+            >
+              Get In Touch
+            </a>
+          </div>
         </div>
       </section>
 
@@ -48,19 +66,19 @@ export default function Home() {
           {/* Stats Row */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="animate-fade-in-up delay-100 hover-lift p-4 -m-4 rounded-lg transition-all">
-              <div className="font-mono text-3xl md:text-4xl font-light text-white stat-number">8+</div>
+              <div className="font-mono text-3xl md:text-4xl font-light text-accent stat-number">8+</div>
               <div className="text-sm text-white/50 uppercase tracking-wider mt-1">Years</div>
             </div>
             <div className="animate-fade-in-up delay-200 hover-lift p-4 -m-4 rounded-lg transition-all">
-              <div className="font-mono text-3xl md:text-4xl font-light text-white stat-number">5</div>
+              <div className="font-mono text-3xl md:text-4xl font-light text-accent stat-number">5</div>
               <div className="text-sm text-white/50 uppercase tracking-wider mt-1">Patents</div>
             </div>
             <div className="animate-fade-in-up delay-300 hover-lift p-4 -m-4 rounded-lg transition-all">
-              <div className="font-mono text-3xl md:text-4xl font-light text-white stat-number">1M+</div>
+              <div className="font-mono text-3xl md:text-4xl font-light text-accent stat-number">1M+</div>
               <div className="text-sm text-white/50 uppercase tracking-wider mt-1">Users</div>
             </div>
             <div className="animate-fade-in-up delay-400 hover-lift p-4 -m-4 rounded-lg transition-all">
-              <div className="font-mono text-3xl md:text-4xl font-light text-white stat-number">ICCV</div>
+              <div className="font-mono text-3xl md:text-4xl font-light text-accent stat-number">ICCV</div>
               <div className="text-sm text-white/50 uppercase tracking-wider mt-1">Oral · 2025</div>
             </div>
           </div>
@@ -92,7 +110,7 @@ export default function Home() {
               <div className="ml-12 flex gap-4 text-sm mt-3">
                 <span className="font-mono text-white/40 text-xs">Diffusion · Spatial Conditioning · Face Synthesis</span>
                 <a href="https://arxiv.org/abs/2507.21600" target="_blank" rel="noopener noreferrer"
-                   className="text-white/70 hover:text-white transition-colors">
+                   className="text-white/70 hover:text-accent transition-colors">
                   → arXiv:2507.21600
                 </a>
               </div>
@@ -125,9 +143,9 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Project 1 */}
-            <div className="hover-lift border border-border rounded-lg bg-white/[0.02] p-6 flex flex-col">
+            <div className="hover-lift border border-border hover:border-accent/40 rounded-lg bg-white/[0.02] transition-colors p-6 flex flex-col">
               <div className="flex items-baseline gap-4 mb-2">
-                <span className="font-mono text-white/40 text-sm">001</span>
+                <span className="font-mono text-accent/80 text-sm">001</span>
                 <h3 className="text-xl text-white font-light">Controllable Face Aging</h3>
               </div>
               <p className="text-white/60 ml-10 mb-3 flex-1">
@@ -137,16 +155,16 @@ export default function Home() {
               <div className="ml-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
                 <span className="font-mono text-white/40 text-xs">Diffusion · PyTorch · CoreML · Edge Inference</span>
                 <a href="https://arxiv.org/abs/2507.21600" target="_blank" rel="noopener noreferrer"
-                   className="text-white/70 hover:text-white transition-colors">
+                   className="text-white/70 hover:text-accent transition-colors">
                   → Publication
                 </a>
               </div>
             </div>
 
             {/* Project 2 */}
-            <div className="hover-lift border border-border rounded-lg bg-white/[0.02] p-6 flex flex-col">
+            <div className="hover-lift border border-border hover:border-accent/40 rounded-lg bg-white/[0.02] transition-colors p-6 flex flex-col">
               <div className="flex items-baseline gap-4 mb-2">
-                <span className="font-mono text-white/40 text-sm">002</span>
+                <span className="font-mono text-accent/80 text-sm">002</span>
                 <h3 className="text-xl text-white font-light">3D Facial Capture Pipeline</h3>
               </div>
               <p className="text-white/60 ml-10 mb-3 flex-1">
@@ -159,9 +177,9 @@ export default function Home() {
             </div>
 
             {/* Project 3 */}
-            <div className="hover-lift border border-border rounded-lg bg-white/[0.02] p-6 flex flex-col">
+            <div className="hover-lift border border-border hover:border-accent/40 rounded-lg bg-white/[0.02] transition-colors p-6 flex flex-col">
               <div className="flex items-baseline gap-4 mb-2">
-                <span className="font-mono text-white/40 text-sm">003</span>
+                <span className="font-mono text-accent/80 text-sm">003</span>
                 <h3 className="text-xl text-white font-light">Self-Supervised Facial Foundation Model</h3>
               </div>
               <p className="text-white/60 ml-10 mb-3 flex-1">
@@ -175,9 +193,9 @@ export default function Home() {
             </div>
 
             {/* Project 4 */}
-            <div className="hover-lift border border-border rounded-lg bg-white/[0.02] p-6 flex flex-col">
+            <div className="hover-lift border border-border hover:border-accent/40 rounded-lg bg-white/[0.02] transition-colors p-6 flex flex-col">
               <div className="flex items-baseline gap-4 mb-2">
-                <span className="font-mono text-white/40 text-sm">004</span>
+                <span className="font-mono text-accent/80 text-sm">004</span>
                 <h3 className="text-xl text-white font-light">Global Skin Tone Detection</h3>
               </div>
               <p className="text-white/60 ml-10 mb-3 flex-1">
@@ -188,16 +206,16 @@ export default function Home() {
               <div className="ml-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
                 <span className="font-mono text-white/40 text-xs">Computer Vision · ONNX · FastAPI · MLOps</span>
                 <a href="https://www.lancome-usa.com/e-shade-finder.html" target="_blank" rel="noopener noreferrer"
-                   className="text-white/70 hover:text-white transition-colors">
+                   className="text-white/70 hover:text-accent transition-colors">
                   → eShadefinder
                 </a>
               </div>
             </div>
 
             {/* Project 5 */}
-            <div className="hover-lift border border-border rounded-lg bg-white/[0.02] p-6 flex flex-col md:col-span-2">
+            <div className="hover-lift border border-border hover:border-accent/40 rounded-lg bg-white/[0.02] transition-colors p-6 flex flex-col md:col-span-2">
               <div className="flex items-baseline gap-4 mb-2">
-                <span className="font-mono text-white/40 text-sm">005</span>
+                <span className="font-mono text-accent/80 text-sm">005</span>
                 <h3 className="text-xl text-white font-light">AI Formulation Engine</h3>
               </div>
               <p className="text-white/60 ml-10 mb-3 flex-1">
@@ -207,7 +225,7 @@ export default function Home() {
               <div className="ml-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
                 <span className="font-mono text-white/40 text-xs">Embedded ML · Edge Inference · Real-time</span>
                 <a href="https://www.yslbeautyus.com/rouge-sur-mesure/rouge-sur-mesure-custom-lip-color-creator/WW-50912YSL.html" target="_blank" rel="noopener noreferrer"
-                   className="text-white/70 hover:text-white transition-colors">
+                   className="text-white/70 hover:text-accent transition-colors">
                   → Rouge-Sur-Mesure
                 </a>
               </div>
@@ -299,7 +317,7 @@ export default function Home() {
           <AnimatedLine variant="thin" width="128px" className="mb-12" />
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="hover-lift border border-border rounded-lg bg-white/[0.02] p-6">
+            <div className="hover-lift border border-border hover:border-accent/40 rounded-lg bg-white/[0.02] transition-colors p-6">
               <h3 className="font-mono text-white/50 text-sm uppercase tracking-wider mb-4">ML / AI Research</h3>
               <ul className="space-y-2 text-white/70">
                 <li>Diffusion Models</li>
@@ -313,7 +331,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="hover-lift border border-border rounded-lg bg-white/[0.02] p-6">
+            <div className="hover-lift border border-border hover:border-accent/40 rounded-lg bg-white/[0.02] transition-colors p-6">
               <h3 className="font-mono text-white/50 text-sm uppercase tracking-wider mb-4">Frameworks</h3>
               <ul className="space-y-2 text-white/70">
                 <li>PyTorch</li>
@@ -325,7 +343,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="hover-lift border border-border rounded-lg bg-white/[0.02] p-6">
+            <div className="hover-lift border border-border hover:border-accent/40 rounded-lg bg-white/[0.02] transition-colors p-6">
               <h3 className="font-mono text-white/50 text-sm uppercase tracking-wider mb-4">Production &amp; MLOps</h3>
               <ul className="space-y-2 text-white/70">
                 <li>Model Serving</li>
@@ -375,7 +393,7 @@ export default function Home() {
               <div className="space-y-6">
                 <a href="https://github.com/tchauffi/metalsplat" target="_blank" rel="noopener noreferrer"
                    className="block group">
-                  <h3 className="text-white/70 group-hover:text-white transition-colors">
+                  <h3 className="text-white/70 group-hover:text-accent transition-colors">
                     metalsplat →
                   </h3>
                   <p className="text-white/40 text-sm">Differentiable 3D Gaussian Splatting rasterizer for PyTorch on Apple Silicon, no CUDA required</p>
@@ -384,7 +402,7 @@ export default function Home() {
 
                 <a href="https://github.com/tchauffi/ChessTransformer" target="_blank" rel="noopener noreferrer"
                    className="block group">
-                  <h3 className="text-white/70 group-hover:text-white transition-colors">
+                  <h3 className="text-white/70 group-hover:text-accent transition-colors">
                     ChessTransformer →
                   </h3>
                   <p className="text-white/40 text-sm">Transformer-based chess engine trained on the Lichess database, rated 2570 elo</p>
@@ -393,7 +411,7 @@ export default function Home() {
 
                 <a href="https://github.com/tchauffi/rust-raytracer" target="_blank" rel="noopener noreferrer"
                    className="block group">
-                  <h3 className="text-white/70 group-hover:text-white transition-colors">
+                  <h3 className="text-white/70 group-hover:text-accent transition-colors">
                     rust-raytracer →
                   </h3>
                   <p className="text-white/40 text-sm">Real-time raytracer in Rust, running in-browser via WebGPU — playable above</p>
@@ -402,7 +420,7 @@ export default function Home() {
 
                 <a href="https://github.com/tchauffi/diffusion-pytorch" target="_blank" rel="noopener noreferrer"
                    className="block group">
-                  <h3 className="text-white/70 group-hover:text-white transition-colors">
+                  <h3 className="text-white/70 group-hover:text-accent transition-colors">
                     diffusion-pytorch →
                   </h3>
                   <p className="text-white/40 text-sm">Diffusion model experiments and implementations in PyTorch</p>
@@ -411,7 +429,7 @@ export default function Home() {
 
                 <a href="https://github.com/tchauffi/diffusionlm-from-scratch" target="_blank" rel="noopener noreferrer"
                    className="block group">
-                  <h3 className="text-white/70 group-hover:text-white transition-colors">
+                  <h3 className="text-white/70 group-hover:text-accent transition-colors">
                     diffusionlm-from-scratch →
                   </h3>
                   <p className="text-white/40 text-sm">Diffusion language model built from scratch</p>
@@ -420,7 +438,7 @@ export default function Home() {
 
                 <a href="https://github.com/tchauffi/nonet" target="_blank" rel="noopener noreferrer"
                    className="block group">
-                  <h3 className="text-white/70 group-hover:text-white transition-colors">
+                  <h3 className="text-white/70 group-hover:text-accent transition-colors">
                     nonet →
                   </h3>
                   <p className="text-white/40 text-sm">Discrete diffusion based sudoku solver</p>
@@ -429,7 +447,7 @@ export default function Home() {
 
                 <a href="https://github.com/tchauffi" target="_blank" rel="noopener noreferrer"
                    className="block group">
-                  <h3 className="text-white/70 group-hover:text-white transition-colors">
+                  <h3 className="text-white/70 group-hover:text-accent transition-colors">
                     github.com/tchauffi →
                   </h3>
                   <p className="text-white/40 text-sm">Active contributor · generative AI and applied ML</p>
@@ -437,7 +455,7 @@ export default function Home() {
 
                 <a href="https://medium.com/@thibaut.chauffier" target="_blank" rel="noopener noreferrer"
                    className="block group">
-                  <h3 className="text-white/70 group-hover:text-white transition-colors">
+                  <h3 className="text-white/70 group-hover:text-accent transition-colors">
                     Medium articles →
                   </h3>
                   <p className="text-white/40 text-sm">Technical writing on generative AI and applied ML</p>
@@ -458,27 +476,27 @@ export default function Home() {
 
           <div className="space-y-4">
             <a href="/tchauffi-webpage/Thibaut_Chauffier_Resume.pdf" download="Thibaut_Chauffier_Resume.pdf"
-               className="block text-white/70 hover:text-white hover:translate-x-2 transition-all text-lg font-light">
+               className="block text-white/70 hover:text-accent hover:translate-x-2 transition-all text-lg font-light">
               Resume (PDF) →
             </a>
             <Link href="/blog"
-               className="block text-white/70 hover:text-white hover:translate-x-2 transition-all text-lg">
+               className="block text-white/70 hover:text-accent hover:translate-x-2 transition-all text-lg">
               Blog →
             </Link>
             <a href="mailto:tchauffi+persosite@gmail.com"
-               className="block text-white/70 hover:text-white hover:translate-x-2 transition-all text-lg">
+               className="block text-white/70 hover:text-accent hover:translate-x-2 transition-all text-lg">
               Email →
             </a>
             <a href="https://linkedin.com/in/thibautchauffier" target="_blank" rel="noopener noreferrer"
-               className="block text-white/70 hover:text-white hover:translate-x-2 transition-all text-lg">
+               className="block text-white/70 hover:text-accent hover:translate-x-2 transition-all text-lg">
               LinkedIn →
             </a>
             <a href="https://github.com/tchauffi" target="_blank" rel="noopener noreferrer"
-               className="block text-white/70 hover:text-white hover:translate-x-2 transition-all text-lg">
+               className="block text-white/70 hover:text-accent hover:translate-x-2 transition-all text-lg">
               GitHub →
             </a>
             <a href="https://medium.com/@thibaut.chauffier" target="_blank" rel="noopener noreferrer"
-               className="block text-white/70 hover:text-white hover:translate-x-2 transition-all text-lg">
+               className="block text-white/70 hover:text-accent hover:translate-x-2 transition-all text-lg">
               Medium →
             </a>
           </div>
